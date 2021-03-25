@@ -1,0 +1,27 @@
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <%= @product.title %>
+        </h1>
+        <div class="post-info">
+            <span class="date"><%= @product.created_at.strftime('%Y-%m-%d') %></span>
+            <span class="category">
+                <a href="/categories/算法作品/">算法作品</a>
+            </span>
+        </div>
+    </div>
+
+        <div class="content">
+    <% @product.images.each do |img| %>
+            <p><%= image_tag img.url, width: '600px' %></p>
+    <% end %>
+            <p align="right">created by <%= @product.author.try(:name) %></p>
+        </div>
+
+    <div class="post-tags">
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        <a href="/tags/人像/">#人像</a>
+    </div>
+
+</div>

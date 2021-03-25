@@ -1,0 +1,20 @@
+<% @products.each do |product| %>
+<div class="post">
+    <div class="post-header index">
+        <h1 class="title">
+            <%= link_to product.title, product %>
+        </h1>
+        <div class="post-info">
+            <span class="date"><%= product.created_at.strftime('%Y-%m-%d') %></span>
+            <span class="category">
+                <a href="/categories/算法作品/"><%= product.detail %></a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="content">
+        <p><img src="<%= product.images.first.try(:url) %>"></p>
+        <p align="right">created by NNA Studio</p>
+    </div>
+</div>
+<% end %>
